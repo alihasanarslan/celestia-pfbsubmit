@@ -27,7 +27,7 @@ a {
 }
 
 .site-identity img {
-  max-width: 55px;
+  max-width: 100px; /* Resim boyutunu istediğiniz büyüklüğe göre ayarlayın. */
   float: left;
   margin: 0 10px 0 0;
 }
@@ -62,9 +62,9 @@ input[type="text"], input[type="textarea"] {
 }
 
 button[type="submit"] {
-  background-color: #7a2bf9;
+  background-color: #ff0000; /* Buton arka plan rengi kırmızı olarak ayarlandı. */
   border: none;
-  color: white;
+  color: white; /* Buton metni rengi beyaz olarak ayarlandı. */
   padding: 0.5em 1em;
   font-size: 1em;
   cursor: pointer;
