@@ -1,34 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+   <meta charset="utf-8">
     <title>PayForBlob celestia</title>
     <link rel="stylesheet" href="style.css">
+    <script src="generate.js" defer></script>
   </head>
-  <header class="site-header">
-    <div class="site-identity">
-      <a href="#"><img src="celestia.png" alt="Site Name" /></a>
-      <h1>Celestia PayForBlob UI  </h1>
-    </div>
-  </header>
   <body>
-    <h3>Celestia PayForBlob Transaction Submit</h3>
+    <header class="site-header">
+      <div class="site-identity">
+        <a href="#"><img src="/public/celestia.png" alt="Site Name" style="width: auto;"/></a>
+        <h1>Celestia PayForBlob UI</h1>
+      </div>
+    </header>
+  <body>
+      <h3>Celestia PayForBlob Transaction Submit</h3>
 
-    <button id="generateButton">Generate</button>
-    <form id="form" method="post">
+      <button id="generateButton">Generate hex-encoded namespace_ıd and message</button>
 
-      <label for="namespace_id" style="font-family:Arial, Helvetica, sans-serif; color: #005fd7;">Namespace ID:</label>
-      <input type="text" id="namespace_id" name="namespace_id" readonly/><br />
-      <label for="message" style="font-family:Arial, Helvetica, sans-serif; color: #005fd7;">Message :</label>
-      <input type="textarea" id="message" name="message" readonly/><br />
-
-      <button type="submit" id="submit" style="color: #7a2bf9;">ENTER</button>
-
-    </form>
+      <form id="form" method="post">
+  <label for="namespace_id" style="font-family:Arial, Helvetica, sans-serif; color: #005fd7;">Namespace ID:</label>
+  <input type="text" id="namespace_id" name="namespace_id" /><br />
+  <label for="message" style="font-family:Arial, Helvetica, sans-serif; color: #005fd7;">Message :</label>
+  <input type="textarea" id="message" name="message" /><br />
+  <button type="submit" id="submit" style="color: #7a2bf9;">ENTER</button>
+</form>
 
     <div id="result"></div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="main.js"></script>
+    <script>
+
+      $(function() {
+  $('#form').submit(function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: '/',
+      method: 'POST',
+      data: $(this).serialize(),
+      success: function(result) {
+        var success = '<h2 style="font-family:Arial, Helvetica, sans-serif; color: #7a2bf9; class="success">✅ Transaction successful ✅ :</h2><pre>' + result + '</pre>';
+        $('#result').html(success);
+      },
+      error: function(error) {
+        var failed = '<h2 style="font-family:Arial, Helvetica, sans-serif; color: #7a2bf9; class="failed">❌️ Transaction failed ❌️ :</h2><pre>' + error.responseText + '</pre>';
+        $('#result').html(failed);
+      }
+    });
+});
+});
+
+
+    </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    generate();
+  });
+</script>
   </body>
 </html>
