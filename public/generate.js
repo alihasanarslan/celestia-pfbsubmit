@@ -9,7 +9,7 @@ function generate() {
   const message = document.getElementById("message").value;
   if (namespace_id && message) {
     const result = document.getElementById("result");
-    result.innerHTML = `Namespace ID: ${namespace_id} <br> Mesaj: ${message}`;
+    result.innerHTML = `Namespace ID: ${namespace_id} <br> Message: ${message}`;
   } else {
     alert("Please fill in all fields.");
   }
