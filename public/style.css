@@ -26,6 +26,12 @@ a {
   color: #cfffec;
 }
 
+.site-identity h2 {
+  font-size: 1em;
+  margin: 0.2em 0 0.3em 0;
+  color: #cfffec;
+}
+
 .site-identity img {
   max-width: 250px;
   height: auto;
