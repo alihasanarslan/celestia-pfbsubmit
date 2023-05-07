@@ -28,8 +28,8 @@ a {
 }
 
 .site-identity img {
-  max-width: 100%;
-  height: auto;
+  max-width: 250px; /* Resmin genişliği 250px olarak sınırlandırıldı. */
+  height: auto; /* Yüksekliği orantılı olarak ayarlar. */
   float: left;
   margin: 0 10px 0 0;
 }
