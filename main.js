@@ -13,7 +13,7 @@ app.post('/', (req, res) => {
   const namespace_id = req.body.namespace_id;
   const data = req.body.message;
   if (namespace_id && data) {
-    const command = `curl --header "Content-Type: application/json" --request POST --data '{"namespace_id":"${namespace_id}","data":"${data}","gas_limit": 80000,"fee":2000}' http://95.217.233.97:26659/submit_pfb`;
+    const command = `curl --header "Content-Type: application/json" --request POST --data '{"namespace_id":"${namespace_id}","data":"${data}","gas_limit": 80000,"fee":2000}' http://164.92.171.63:26659/submit_pfb`;
     exec(command, (error, stdout, stderr) => {
       if (error) {
         console.error(error);
