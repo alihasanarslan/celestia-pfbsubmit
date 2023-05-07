@@ -5,13 +5,10 @@ function generate() {
       window.open("https://go.dev/play/p/7ltvaj8lhRl", "_blank");
   });
   
-  const namespace_id = document.getElementById("namespace_id").value;
-  const message = document.getElementById("message").value;
-  if (namespace_id && message) {
-    const result = document.getElementById("result");
-    result.innerHTML = `Namespace ID: ${namespace_id} <br> Message: ${message}`;
-  } else {
-    alert("Please fill in all fields.");
-  }
+  const namespace_id;
+   document.getElementById("namespace_id").value=namespace_id;
+  const message;
+   document.getElementById("message").value=message;
+
     
     }
